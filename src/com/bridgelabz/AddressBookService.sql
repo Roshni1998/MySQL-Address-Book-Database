@@ -128,3 +128,28 @@ mysql> SELECT * FROM address_book
 | Aayush     | Mehra     | Nehru Marg    | Lucknow  | Uttar Pradesh | 10034 | 9998889992   | aayush123@gmail.com |
 +------------+-----------+---------------+----------+---------------+-------+--------------+---------------------+
 3 rows in set (0.00 sec)
+
+/* UC-7 */
+mysql> SELECT state, count(state) FROM address_book WHERE state = 'Uttar Pradesh' GROUP BY state;
++---------------+--------------+
+| state         | count(state) |
++---------------+--------------+
+| Uttar Pradesh |            3 |
++---------------+--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT state, count(state) FROM address_book WHERE state = 'Rajasthan' GROUP BY state;
++-----------+--------------+
+| state     | count(state) |
++-----------+--------------+
+| Rajasthan |            1 |
++-----------+--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT state, count(state) FROM address_book WHERE state = 'Karnataka' GROUP BY state;
++-----------+--------------+
+| state     | count(state) |
++-----------+--------------+
+| Karnataka |            1 |
++-----------+--------------+
+1 row in set (0.00 sec)

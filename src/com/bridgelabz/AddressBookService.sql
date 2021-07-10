@@ -83,3 +83,15 @@ mysql> SELECT * FROM address_book;
 | Aayush     | Mehra     | Nehru Marg     | Lucknow | Uttar Pradesh | 10034 | 9998889992   | aayush123@gmail.com |
 +------------+-----------+----------------+---------+---------------+-------+--------------+---------------------+
 2 rows in set (0.04 sec)
+
+/* UC-5 */
+mysql> DELETE FROM address_book WHERE first_name = 'Jyoti';
+Query OK, 1 row affected (0.11 sec)
+
+mysql> SELECT * FROM address_book;
++------------+-----------+------------+---------+---------------+-------+--------------+---------------------+
+| first_name | last_name | address    | city    | state         | zip   | phone_number | email_id            |
++------------+-----------+------------+---------+---------------+-------+--------------+---------------------+
+| Aayush     | Mehra     | Nehru Marg | Lucknow | Uttar Pradesh | 10034 | 9998889992   | aayush123@gmail.com |
++------------+-----------+------------+---------+---------------+-------+--------------+---------------------+
+1 row in set (0.13 sec)

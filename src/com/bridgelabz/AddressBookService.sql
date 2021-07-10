@@ -204,3 +204,12 @@ mysql> SELECT * FROM address_book;
 | Aayush     | Mehra     | Nehru Marg    | Lucknow  | Uttar Pradesh | 10034 | 9998889992   | aayush123@gmail.com | Teacher | Profession |
 +------------+-----------+---------------+----------+---------------+-------+--------------+---------------------+---------+------------+
 5 rows in set (0.00 sec)
+
+/* UC-10 */
+mysql> SELECT type, count(type) FROM address_book WHERE type = 'Profession' GROUP BY type;
++------------+-------------+
+| type       | count(type) |
++------------+-------------+
+| Profession |           2 |
++------------+-------------+
+1 row in set (0.00 sec)

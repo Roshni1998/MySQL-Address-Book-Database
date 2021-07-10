@@ -153,3 +153,16 @@ mysql> SELECT state, count(state) FROM address_book WHERE state = 'Karnataka' GR
 | Karnataka |            1 |
 +-----------+--------------+
 1 row in set (0.00 sec)
+
+/* UC-8 */
+mysql> SELECT first_name, last_name From address_book ORDER BY first_name, last_name ASC;
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| Aayush     | Mehra     |
+| Meera      | Rajguru   |
+| Mohit      | Gupta     |
+| Riya       | Ojha      |
+| Rohit      | Sharma    |
++------------+-----------+
+5 rows in set (0.00 sec)

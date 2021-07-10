@@ -166,3 +166,41 @@ mysql> SELECT first_name, last_name From address_book ORDER BY first_name, last_
 | Rohit      | Sharma    |
 +------------+-----------+
 5 rows in set (0.00 sec)
+
+/* UC-9 */
+mysql> UPDATE address_book
+    -> SET name = 'Suman', type = 'Friend' WHERE first_name = 'Rohit';
+Query OK, 1 row affected (0.24 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE address_book
+    -> SET name = 'Ranjeet', type = 'Family' WHERE first_name = 'Riya';
+Query OK, 1 row affected (0.21 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE address_book
+    -> SET name = 'Doctor', type = 'Profession' WHERE first_name = 'Meera';
+Query OK, 1 row affected (0.19 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE address_book
+    -> SET name = 'Roohi', type = 'Family' WHERE first_name = 'Mohit';
+Query OK, 1 row affected (0.15 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE address_book
+    -> SET name = 'Teacher', type = 'Profession' WHERE first_name = 'Aayush';
+Query OK, 1 row affected (0.19 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM address_book;
++------------+-----------+---------------+----------+---------------+-------+--------------+---------------------+---------+------------+
+| first_name | last_name | address       | city     | state         | zip   | phone_number | email_id            | name    | type       |
++------------+-----------+---------------+----------+---------------+-------+--------------+---------------------+---------+------------+
+| Rohit      | Sharma    | Malviya Nagar | Kanpur   | Uttar Pradesh | 16789 | 7372747578   | rohit123@gmail.com  | Suman   | Friend     |
+| Riya       | Ojha      | Pratap Nagar  | Jodhpur  | Rajasthan     | 10209 | 7668889992   | riya123@gmail.com   | Ranjeet | Family     |
+| Meera      | Rajguru   | Gandhi Marg   | Banglore | Karnataka     | 10012 | 8979695945   | meera123@gmail.com  | Doctor  | Profession |
+| Mohit      | Gupta     | Karol Bagh    | Varanasi | Uttar Pradesh | 10980 | 9998884566   | mohit123@gmail.com  | Roohi   | Family     |
+| Aayush     | Mehra     | Nehru Marg    | Lucknow  | Uttar Pradesh | 10034 | 9998889992   | aayush123@gmail.com | Teacher | Profession |
++------------+-----------+---------------+----------+---------------+-------+--------------+---------------------+---------+------------+
+5 rows in set (0.00 sec)

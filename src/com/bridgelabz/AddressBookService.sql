@@ -68,3 +68,18 @@ mysql> SELECT * FROM address_book;
 | Aayush     | Mehra     | Nehru Marg      | Lucknow | Uttar Pradesh | 10034 | 9998889992   | aayush123@gmail.com |
 +------------+-----------+-----------------+---------+---------------+-------+--------------+---------------------+
 2 rows in set (0.10 sec)
+
+/* UC-4 */
+mysql> UPDATE address_book
+    -> SET address = 'Shastri Circle' WHERE first_name = 'Jyoti';
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM address_book;
++------------+-----------+----------------+---------+---------------+-------+--------------+---------------------+
+| first_name | last_name | address        | city    | state         | zip   | phone_number | email_id            |
++------------+-----------+----------------+---------+---------------+-------+--------------+---------------------+
+| Jyoti      | Paliwal   | Shastri Circle | Udaipur | Rajasthan     | 10456 | 9988776650   | jyoti123@gmail.com  |
+| Aayush     | Mehra     | Nehru Marg     | Lucknow | Uttar Pradesh | 10034 | 9998889992   | aayush123@gmail.com |
++------------+-----------+----------------+---------+---------------+-------+--------------+---------------------+
+2 rows in set (0.04 sec)

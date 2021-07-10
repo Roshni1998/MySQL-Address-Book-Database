@@ -95,3 +95,36 @@ mysql> SELECT * FROM address_book;
 | Aayush     | Mehra     | Nehru Marg | Lucknow | Uttar Pradesh | 10034 | 9998889992   | aayush123@gmail.com |
 +------------+-----------+------------+---------+---------------+-------+--------------+---------------------+
 1 row in set (0.13 sec)
+
+/* UC-6 */
+mysql> INSERT INTO address_book
+    -> (first_name, last_name, address, city, state, zip, phone_number, email_id) VALUES
+    -> ('Meera', 'Rajguru', 'Gandhi Marg', 'Banglore','Karnataka', 10012, 8979695945, 'meera123@gmail.com'),
+    -> ('Rohit', 'Sharma', 'Malviya Nagar', 'Kanpur','Uttar Pradesh', 16789, 7372747578, 'rohit123@gmail.com'),
+    -> ('Mohit', 'Gupta', 'Karol Bagh', 'Varanasi','Uttar Pradesh', 10980, 9998884566, 'mohit123@gmail.com'),
+    -> ('Riya', 'Ojha', 'Pratap Nagar', 'Jodhpur','Rajasthan', 10209, 7668889992, 'riya123@gmail.com');
+Query OK, 4 rows affected (0.23 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM address_book;
++------------+-----------+---------------+----------+---------------+-------+--------------+---------------------+
+| first_name | last_name | address       | city     | state         | zip   | phone_number | email_id            |
++------------+-----------+---------------+----------+---------------+-------+--------------+---------------------+
+| Rohit      | Sharma    | Malviya Nagar | Kanpur   | Uttar Pradesh | 16789 | 7372747578   | rohit123@gmail.com  |
+| Riya       | Ojha      | Pratap Nagar  | Jodhpur  | Rajasthan     | 10209 | 7668889992   | riya123@gmail.com   |
+| Meera      | Rajguru   | Gandhi Marg   | Banglore | Karnataka     | 10012 | 8979695945   | meera123@gmail.com  |
+| Mohit      | Gupta     | Karol Bagh    | Varanasi | Uttar Pradesh | 10980 | 9998884566   | mohit123@gmail.com  |
+| Aayush     | Mehra     | Nehru Marg    | Lucknow  | Uttar Pradesh | 10034 | 9998889992   | aayush123@gmail.com |
++------------+-----------+---------------+----------+---------------+-------+--------------+---------------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM address_book
+    -> WHERE state = 'Uttar Pradesh';
++------------+-----------+---------------+----------+---------------+-------+--------------+---------------------+
+| first_name | last_name | address       | city     | state         | zip   | phone_number | email_id            |
++------------+-----------+---------------+----------+---------------+-------+--------------+---------------------+
+| Rohit      | Sharma    | Malviya Nagar | Kanpur   | Uttar Pradesh | 16789 | 7372747578   | rohit123@gmail.com  |
+| Mohit      | Gupta     | Karol Bagh    | Varanasi | Uttar Pradesh | 10980 | 9998884566   | mohit123@gmail.com  |
+| Aayush     | Mehra     | Nehru Marg    | Lucknow  | Uttar Pradesh | 10034 | 9998889992   | aayush123@gmail.com |
++------------+-----------+---------------+----------+---------------+-------+--------------+---------------------+
+3 rows in set (0.00 sec)

@@ -31,7 +31,7 @@ mysql> CREATE table address_book (
     -> city VARCHAR(50) NOT NULL,
     -> state VARCHAR(50) NOT NULL,
     -> zip INT NOT NULL,
-    -> phone_number INT(10) NOT NULL,
+    -> phone_number VARCHAR(10) NOT NULL,
     -> email_id VARCHAR(20) NOT NULL,
     -> primary key (phone_number)
     -> );
@@ -51,3 +51,20 @@ mysql> desc address_book;
 | email_id     | varchar(20)  | NO   |     | NULL    |       |
 +--------------+--------------+------+-----+---------+-------+
 8 rows in set (0.15 sec)
+
+/* UC-3 */
+mysql> INSERT INTO address_book
+    -> (first_name, last_name, address, city, state, zip, phone_number, email_id) VALUES
+    -> ('Aayush', 'Mehra', 'Nehru Marg', 'Lucknow','Uttar Pradesh', 10034, 9998889992, 'aayush123@gmail.com'),
+    -> ('Jyoti', 'Paliwal', 'Sukhadiya Nagar', 'Udaipur','Rajasthan', 10456, 9988776650, 'jyoti123@gmail.com');
+Query OK, 2 rows affected (0.25 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM address_book;
++------------+-----------+-----------------+---------+---------------+-------+--------------+---------------------+
+| first_name | last_name | address         | city    | state         | zip   | phone_number | email_id            |
++------------+-----------+-----------------+---------+---------------+-------+--------------+---------------------+
+| Jyoti      | Paliwal   | Sukhadiya Nagar | Udaipur | Rajasthan     | 10456 | 9988776650   | jyoti123@gmail.com  |
+| Aayush     | Mehra     | Nehru Marg      | Lucknow | Uttar Pradesh | 10034 | 9998889992   | aayush123@gmail.com |
++------------+-----------+-----------------+---------+---------------+-------+--------------+---------------------+
+2 rows in set (0.10 sec)
